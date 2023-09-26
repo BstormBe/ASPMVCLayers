@@ -10,5 +10,7 @@ namespace DAL.Interfaces
     public interface IUserRepository
     {
         public List<User> GetAll();
+
+        public bool Add(User user);
     }
 }

@@ -1,0 +1,29 @@
+﻿@using BLL.Forms;
+@model UserForms;
+
+<h1>Bonjour dans ADD</h1>
+
+<form asp-controller="User" asp-action="create" method="post">
+    
+    <p>Lastname</p>
+    <input type="text" asp-for="Lastname" />
+    <br />
+    <span style="color:red" asp-validation-for="Lastname"></span>
+    <p>Firstname</p>
+    <input type="text" asp-for="Firstname" />
+    <br />
+    <span style="color:red" asp-validation-for="Firstname"></span>
+    
+    <p>Username</p>
+    <input type="text" asp-for="Username" />
+    <br />
+    <span style="color:red" asp-validation-for="Username"></span>
+    <p>Password</p>
+    <input type="password" asp-for="Password" />
+    <br />
+    <span style="color:red" asp-validation-for="Password"></span>
+    <br />
+    <button>Submit</button>
+</form>
+@*
+<div asp-validation-summary="All"></div>*@

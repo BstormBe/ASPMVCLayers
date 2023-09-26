@@ -11,6 +11,24 @@ namespace DAL.Repositories
 {
     public class UserRepositoryFakeDB : IUserRepository
     {
+        public bool Add(User user)
+        {
+
+            try
+            {
+                user.Id = FakeDB.Users.Last().Id + 1;
+                FakeDB.Users.Add(user);
+                Console.WriteLine("Add");
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            
+        }
+
         public List<User> GetAll()
         {
             return FakeDB.Users;

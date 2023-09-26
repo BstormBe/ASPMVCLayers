@@ -1,4 +1,5 @@
-﻿using BLL.Mappers;
+﻿using BLL.Forms;
+using BLL.Mappers;
 using BLL.ViewModel;
 using DAL;
 using DAL.Interfaces;
@@ -24,7 +25,12 @@ namespace BLL.Services
 
         public List<UserViewModel> GetAll()
         {
-            return _userRepository.GetAll().Select(x => x.toUserViewModel()).ToList();
+            return _userRepository.GetAll().Select(x => x.ToUserViewModel()).ToList();
+        }
+
+        public bool Add(UserForms userForm)
+        {
+            return _userRepository.Add(userForm.ToUser());
         }
 
 
